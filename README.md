@@ -10,15 +10,28 @@ This repository depends on three private Python packages:
 All dependencies are declared in `requirements.txt`.  
 To install them locally using pip, you must configure Git authentication using one of the supported methods below.
 
-## Installing Dependencies
+## Installing PyYel libs as dependencies
 
-1. Create or activate your virtual environment:
+### Using uv (recommended)
+
+uv is a modern packet manager build upon python and pip for faster packet installation and management.
+
+1. Install uv to your global python installation:
 
 ```bash
-python3 -m venv .venv
+# You need Python already installed
+pip install uv
 ```
 
-2. Activate your environement
+2. Create a venv using uv:
+
+```bash
+# Replace .venv with your desired venv name (keeping .venv is recommended)
+uv venv .venv
+```
+
+3. Activate it:
+
 ```bash
 # Linux/macOS
 source .venv/bin/activate
@@ -27,17 +40,33 @@ source .venv/bin/activate
 .venv\Scripts\activate 
 ```
 
-3. Setup a secret store for your Git token:
-```
-git config --global credential.helper store
+4. Install the libs as requirements:
+
+```bash
+# Edit the requirements to cherry pick the extras you are going to use
+uv pip install -r requirements.txt
 ```
 
-4. Force login using your Git username and token as password:
-```
-git ls-remote https://github.com/PyYel/PyYel-DevOps.git
+
+### Using python 
+
+1. Make a venv:
+
+```bash
+python3 -m venv .venv
 ```
 
-5. Install the libs as requirements:
+2. Activate your environement
+
+```bash
+# Linux/macOS
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate 
+```
+
+3. Install the libs as requirements:
 ```
 pip install -r requirements.txt
 ```

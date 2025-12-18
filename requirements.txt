@@ -1,8 +1,12 @@
 # PyYel DevOps
-pyldev @ git+https://github.com/PyYel/PyYel-DevOps.git
+# git+https://github.com/PyYel/PyYel-DevOps.git#egg=PyYel-DevOps
 
 # PyYel CloudOps
-git+https://github.com/PyYel/PyYel-CloudOps.git@main#egg=PyYel-CloudOps
+# git+https://github.com/PyYel/PyYel-CloudOps.git@main#egg=PyYel-CloudOps
 
 # PyYel MLOps
-git+https://github.com/PyYel/PyYel-MLOps.git@main#egg=PyYel-MLOps
+# git+https://github.com/PyYel/PyYel-MLOps.git@main#egg=PyYel-MLOps
+
+
+pylcloud[all] @ git+https://github.com/PyYel/PyYel-CloudOps.git@main
+pyldev[file] @ git+https://github.com/PyYel/PyYel-DevOps.git
